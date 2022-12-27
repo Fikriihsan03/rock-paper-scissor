@@ -6,7 +6,6 @@ interface IProps {
 }
 
 const RightPlayer = ({ image }: IProps) => {
-  useEffect(() => {}, [image]);
   return (
     <div className="flex flex-col items-center gap-4">
       <div style={{ height: 180 }}>{image}</div>

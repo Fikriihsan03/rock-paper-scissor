@@ -15,17 +15,18 @@ const RpsImage = ({
   useEffect(() => {
     setShow(false);
     resetSelectButtonClicked();
-  }, [isRpsSelected]);
+  }, [isRpsSelected,imageSrc]);
 
   useEffect(() => {
-    console.log("render");
+    // console.log(show)
+    console.log("render")
     const timeout = setTimeout(() => {
       setShow(true);
-    }, 1500);
-
-    return () => clearTimeout(timeout);
+    }, 2000);
+    
+    // console.log("render");
+   return ()=>clearTimeout(timeout);
   }, [show]);
-
   if (!show) return null;
 
   return <img className="animate-fade-in-down" src={imageSrc} alt="icon" />;
