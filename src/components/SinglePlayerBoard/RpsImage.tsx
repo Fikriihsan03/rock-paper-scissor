@@ -1,33 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface IProps {
+  imageShow: boolean;
   imageSrc: any;
   isRpsSelected: boolean;
   resetSelectButtonClicked: () => void;
 }
 const RpsImage = ({
+  imageShow,
   imageSrc,
   isRpsSelected,
   resetSelectButtonClicked,
 }: IProps) => {
-  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    setShow(false);
     resetSelectButtonClicked();
-  }, [isRpsSelected,imageSrc]);
+  }, [isRpsSelected, imageSrc]);
 
-  useEffect(() => {
-    // console.log(show)
-    console.log("render")
-    const timeout = setTimeout(() => {
-      setShow(true);
-    }, 2000);
-    
-    // console.log("render");
-   return ()=>clearTimeout(timeout);
-  }, [show]);
-  if (!show) return null;
+  if (!imageShow) return null;
 
   return <img className="animate-fade-in-down" src={imageSrc} alt="icon" />;
 };

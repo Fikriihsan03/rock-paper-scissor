@@ -6,7 +6,7 @@ const getBattleResult=(p1:string, p2:string,p1Name:string,p2Name:string) => {
         return `${p1Name} win`
       }
       else {
-        return "p2 win"
+        return `${p2Name} win`
       }
     } else if (p1 === "PAPER") {
       if (p2 === "ROCK") {
