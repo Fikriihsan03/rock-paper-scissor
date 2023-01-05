@@ -15,7 +15,7 @@ const RpsImage = ({
 
   useEffect(() => {
     resetSelectButtonClicked();
-  }, [isRpsSelected, imageSrc]);
+  }, [isRpsSelected,resetSelectButtonClicked]);
 
   if (!imageShow) return null;
 

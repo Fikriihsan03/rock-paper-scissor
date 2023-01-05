@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import LeftPlayer from "./LeftPlayer";
 import RightPlayer from "./RightPlayer";
@@ -64,10 +64,10 @@ const SinglePlayerBoard = () => {
     return Math.floor(Math.random() * 3);
   }
 
-  const resetClickedButtonState = () => {
+  const resetClickedButtonState = useCallback(() => {
     setIsCompShow(false);
     setIsRpsSelected(false);
-  };
+  }, []);
 
   const selectedOptions = (selected: string) => {
     setIsRpsSelected(true);
@@ -83,7 +83,7 @@ const SinglePlayerBoard = () => {
       rightPlayerName
     );
 
-    setResultData((prevResultData)=>({
+    setResultData((prevResultData) => ({
       ...prevResultData,
       p1: p1Choice,
       totalP1Win:
