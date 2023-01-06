@@ -1,16 +1,32 @@
-import batu from "../../assets/batu.png";
+import { useEffect } from "react";
 import heart from "../../assets/health.png";
-const LeftPlayer = () => {
+
+interface IProps {
+  image: JSX.Element;
+  health: number;
+}
+const LeftPlayer = ({ image, health }: IProps) => {
   return (
     <div className="flex flex-col items-center gap-4">
+      <div style={{ height: 180 }}>{image}</div>
+      <p>player 01</p>
       <p className="self-start">
-        Health :{" "}
+        Health :
         <span>
-          <img alt="healthbar" src={heart} width="20" height="20" />
+          {[...Array(health)].map((_, i) => {
+            return (
+              <img
+                key={i}
+                className="inline mx-[3px]"
+                alt="healthbar"
+                src={heart}
+                width="20"
+                height="20"
+              />
+            );
+          })}
         </span>
       </p>
-      <img src={batu} alt="icon" />
-      <p>player 01</p>
     </div>
   );
 };

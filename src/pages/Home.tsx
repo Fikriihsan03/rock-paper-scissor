@@ -11,7 +11,7 @@ const Home = () => {
           </button>
         </Link>
         <Link to="/multiplayer">
-          <button className=" rounded-lg p-4 border-2 border-black hover:bg-blue-500 hover:border-transparent hover:text-white">
+          <button disabled className=" rounded-lg p-4 border-2 border-black">
             Multi Player
           </button>
         </Link>

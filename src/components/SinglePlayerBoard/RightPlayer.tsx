@@ -1,10 +1,14 @@
-import gunting from "../../assets/gunting.png";
+import { useEffect } from "react";
 
-const RightPlayer = () => {
+// import gunting from "../../assets/gunting.png";
+interface IProps {
+  image: JSX.Element;
+}
+
+const RightPlayer = ({ image }: IProps) => {
   return (
     <div className="flex flex-col items-center gap-4">
-      <p></p>
-      <img src={gunting} alt="icon" />
+      <div style={{ height: 180 }}>{image}</div>
       <p>Computer</p>
     </div>
   );
